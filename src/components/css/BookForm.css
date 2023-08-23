@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+hr {
+  border-top: 1px solid #eee;
+}
+
+.book-form {
+  margin: 50px;
+}
+
+.book-form h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #999898;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.book-form button {
+  height: 100%;
+  margin: 0;
+  border-radius: 3px;
+  color: #ffffffb2;
+  font-weight: 300;
+  padding: 5px 30px;
+  background-color: #0291ff;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  max-height: 50px;
+}
+
+.form input {
+  padding: 3px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.title {
+  grid-column: span 3;
+}
+
+.author {
+  grid-column: span 2;
+}
