@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.book-card {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 50px;
+  padding: 15px;
+  box-shadow: 0 1px 2px 0 rgba(196, 196, 196, 0.2), 0 2px 5px 0 rgba(173, 173, 173, 0.19);
+}
+
+.book-card-left h6 {
+  font-weight: bold;
+  color: #000;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.book-card-left h3 {
+  font-weight: bold;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.book-card-left p {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(30, 143, 255, 0.795);
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.vertical-line {
+  color: #ddd;
+  margin: 0 10px 0 10px;
+}
+
+button {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin: 20px 10px 5px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: rgba(30, 143, 255, 0.795);
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.book-card-progress {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  gap: 20px;
+}
+
+.progress-percentage {
+  font-size: 1.6rem;
+}
+
+.progress-text {
+  font-size: small;
+}
+
+.book-card-right {
+  border-left: 2px solid #ecebebad;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.current-chapter {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #ddd;
+  font-size: 0.8rem;
+}
+
+.book-state {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  justify-self: left;
+}
+
+.book-card-right button {
+  border-radius: 3px;
+  color: #ffffffb2;
+  font-weight: 300;
+  padding: 5px 20px;
+  background-color: #0291ffd7;
+}
+
+@media screen and (max-width: 768px) {
+  .book-card {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 50px;
+    padding: 15px;
+    box-shadow: 0 1px 2px 0 rgba(196, 196, 196, 0.2), 0 2px 5px 0 rgba(173, 173, 173, 0.19);
+  }
+
+  .book-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .book-card-progress {
+    justify-content: center;
+  }
+
+  .book-card-right {
+    border-left: none;
+    justify-content: center;
+  }
+}
