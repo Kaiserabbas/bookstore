@@ -1,9 +1,22 @@
-function Categories() {
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories } from '../redux/categories/categoriesSlice';
+
+const RenderCategories = () => {
+  const categories = useSelector((state) => state.categories.categories);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
+
   return (
-    <div className="categories">
-      <h2>Coming Soon with exciting catagories</h2>
+    <div className="category-list">
+      {categories.map((category, index) => (
+        <div key={index}>{category}</div>
+      ))}
     </div>
   );
-}
+};
 
-export default Categories;
+export default RenderCategories;
