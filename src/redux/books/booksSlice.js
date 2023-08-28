@@ -6,7 +6,7 @@ const initialState = [
     title: 'The Hunger Games',
     category: 'Action',
     author: 'Suzanne Collins',
-    progress: 64,
+    progress: 74,
     state: 'Chapter 17',
   },
   {
