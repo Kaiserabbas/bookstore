@@ -2,22 +2,17 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './css/BookCard.css';
 import ProgressCircle from './ProgressCircle';
+import RemoveButton from './RemoveButton';
 
-const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
+const BookCard = ({
+  book, index, onEdit, onComment,
+}) => {
   const [comment, setComment] = useState('');
   const [progress, setProgress] = useState(book.progress);
-
-  const handleDelete = () => {
-    onDelete(book);
-  };
 
   const handleEdit = () => {
     const updatedBook = { ...book, progress: 0 };
     onEdit(index, updatedBook);
-  };
-
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
   };
 
   const handleCommentSubmit = () => {
@@ -29,7 +24,6 @@ const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
     const progress = book.progress + 10;
     setProgress(progress + 10);
   };
-
   return (
     <div className="book-card">
       <div className="book-card-left">
@@ -37,11 +31,10 @@ const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
         <h3>{book.title}</h3>
         <p>{book.author}</p>
         <button type="button" onClick={handleCommentSubmit}>
-          Comments<span className="vertical-line">|</span>
+          Comments
+          <span className="vertical-line">|</span>
         </button>
-        <button type="button" onClick={handleDelete}>
-          Remove <span className="vertical-line">|</span>
-        </button>
+        <RemoveButton bookId={book.id} />
         <button type="button" onClick={handleEdit}>
           Edit
         </button>
@@ -49,7 +42,11 @@ const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
       <div className="book-card-progress">
         <ProgressCircle progress={progress} />
         <div>
-          <p className="progress-percentage">{progress}% </p>
+          <p className="progress-percentage">
+            {progress}
+            %
+            {' '}
+          </p>
           <p className="progress-text">Completed</p>
         </div>
       </div>
@@ -74,7 +71,6 @@ BookCard.propTypes = {
     state: PropTypes.string.isRequired,
   }).isRequired,
   index: PropTypes.number.isRequired,
-  onDelete: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
   onComment: PropTypes.func.isRequired,
 };

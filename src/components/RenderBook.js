@@ -16,8 +16,7 @@ const RenderBook = () => {
   };
 
   const handleCommentBook = (bookId, comment) => {
-    // Implement your logic for handling comments here
-    console.log(`Comment for book ${bookId}: ${comment}`);
+    dispatch(editBook({ bookId, comment }));
   };
 
   return (

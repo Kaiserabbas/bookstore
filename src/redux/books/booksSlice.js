@@ -6,7 +6,7 @@ const initialState = [
     title: 'The Hunger Games',
     category: 'Action',
     author: 'Suzanne Collins',
-    progress: 64,
+    progress: 74,
     state: 'Chapter 17',
   },
   {
@@ -90,9 +90,7 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       state.push({ ...action.payload, id: Date.now() });
     },
-    removeBook: (state, action) => {
-      return state.filter((book) => book.id !== action.payload);
-    },
+    removeBook: (state, action) => state.filter((book) => book.id !== action.payload),
     editBook: (state, action) => {
       const index = state.findIndex((book) => book.id === action.payload.id);
       if (index !== -1) {
