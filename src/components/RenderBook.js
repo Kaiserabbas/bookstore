@@ -4,7 +4,7 @@ import BookCard from './BookCard';
 import { removeBook, editBook } from '../redux/books/booksSlice';
 
 const RenderBook = () => {
-  const books = useSelector((state) => state.books); // Access books from Redux store
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   const handleDeleteBook = (id) => {
@@ -14,6 +14,12 @@ const RenderBook = () => {
   const handleEditBook = (id, updatedBook) => {
     dispatch(editBook({ id, ...updatedBook }));
   };
+
+  const handleCommentBook = (bookId, comment) => {
+    // Implement your logic for handling comments here
+    console.log(`Comment for book ${bookId}: ${comment}`);
+  };
+
   return (
     <div className="book-list">
       {books.map((book, index) => (
@@ -23,6 +29,7 @@ const RenderBook = () => {
           index={index}
           onDelete={() => handleDeleteBook(book.id)}
           onEdit={(updatedBook) => handleEditBook(book.id, updatedBook)}
+          onComment={(bookId, comment) => handleCommentBook(bookId, comment)}
         />
       ))}
     </div>
