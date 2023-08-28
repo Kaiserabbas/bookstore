@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './css/BookCard.css';
 import ProgressCircle from './ProgressCircle';
+import RemoveButton from './RemoveButton';
 
 const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
   const [comment, setComment] = useState('');
@@ -29,7 +30,7 @@ const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
     const progress = book.progress + 10;
     setProgress(progress + 10);
   };
-
+  console.log('Book Progress:', progress);
   return (
     <div className="book-card">
       <div className="book-card-left">
@@ -39,9 +40,7 @@ const BookCard = ({ book, index, onDelete, onEdit, onComment }) => {
         <button type="button" onClick={handleCommentSubmit}>
           Comments<span className="vertical-line">|</span>
         </button>
-        <button type="button" onClick={handleDelete}>
-          Remove <span className="vertical-line">|</span>
-        </button>
+        <RemoveButton bookId={book.id} />
         <button type="button" onClick={handleEdit}>
           Edit
         </button>
