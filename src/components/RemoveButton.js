@@ -12,7 +12,9 @@ const RemoveButton = ({ bookId }) => {
 
   return (
     <button type="button" onClick={handleRemoveBook}>
-      Remove <span className="vertical-line">|</span>
+      Remove
+      {' '}
+      <span className="vertical-line">|</span>
     </button>
   );
 };

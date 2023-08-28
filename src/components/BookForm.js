@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import './css/BookForm.css';
-import { useDispatch } from 'react-redux';
 import AddButton from './AddButton';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);

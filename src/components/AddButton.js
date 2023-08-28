@@ -9,8 +9,8 @@ const AddButton = ({ title, author }) => {
   const handleAddBook = () => {
     const newBook = {
       id: Date.now(),
-      title: title,
-      author: author,
+      title,
+      author,
       category: 'New Book Category',
       progress: 0,
       state: 'Chapter 1',
