@@ -1,8 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import BookCard from './BookCard';
+import { removeBook, editBook } from '../redux/books/booksSlice';
 
-const RenderBook = ({ books, onDelete, onEdit, onComment }) => {
+const RenderBook = () => {
+  const books = useSelector((state) => state.books); // Access books from Redux store
+  const dispatch = useDispatch();
+
+  const handleDeleteBook = (id) => {
+    dispatch(removeBook(id));
+  };
+
+  const handleEditBook = (id, updatedBook) => {
+    dispatch(editBook({ id, ...updatedBook }));
+  };
   return (
     <div className="book-list">
       {books.map((book, index) => (
@@ -10,25 +21,11 @@ const RenderBook = ({ books, onDelete, onEdit, onComment }) => {
           key={book.id}
           book={book}
           index={index}
-          onDelete={onDelete}
-          onEdit={onEdit}
-          onComment={onComment}
+          onDelete={() => handleDeleteBook(book.id)}
+          onEdit={(updatedBook) => handleEditBook(book.id, updatedBook)}
         />
       ))}
     </div>
   );
-};
-RenderBook.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      // ... Define other properties
-    })
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
-  onEdit: PropTypes.func.isRequired,
-  onComment: PropTypes.func.isRequired,
 };
 export default RenderBook;
