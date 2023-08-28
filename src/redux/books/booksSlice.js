@@ -1,4 +1,6 @@
-const book = [
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = [
   {
     id: 1,
     title: 'The Hunger Games',
@@ -81,4 +83,25 @@ const book = [
   },
 ];
 
-export default book;
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {
+    addBook: (state, action) => {
+      state.push({ ...action.payload, id: Date.now() });
+    },
+    removeBook: (state, action) => {
+      return state.filter((book) => book.id !== action.payload);
+    },
+    editBook: (state, action) => {
+      const index = state.findIndex((book) => book.id === action.payload.id);
+      if (index !== -1) {
+        state[index] = { ...state[index], ...action.payload };
+      }
+    },
+    // Add more reducers as needed
+  },
+});
+
+export const { addBook, removeBook, editBook } = booksSlice.actions;
+export default booksSlice.reducer;
