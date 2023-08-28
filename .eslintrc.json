@@ -25,6 +25,7 @@
     "arrow-parens": "off",
     "no-unused-vars": "off",
     "no-console": "off",
+    "react/no-array-index-key": "off",
     "no-shadow": "off",
     "no-plusplus": "off", 
     "no-param-reassign": "off",
