@@ -7,7 +7,7 @@ const RenderCategories = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCategories());
+    dispatch(getCategories('Under construction'));
   }, [dispatch]);
 
   return (
