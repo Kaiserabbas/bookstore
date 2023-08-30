@@ -12,8 +12,6 @@
 .progress-bar {
   fill: none;
   stroke: #007bff;
-
-  /* Change to your desired color */
   stroke-width: 3;
   stroke-linecap: round;
   transform: rotate(-90deg);
