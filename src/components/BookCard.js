@@ -47,7 +47,7 @@ const BookCard = ({ book, index, onEdit, onComment }) => {
       </div>
       <div className="book-card-right">
         <p className="current-chapter">Current Chapter</p>
-        <p className="book-state">{book.state || 'Not Started'}</p>
+        <p className="book-state">{book.state || 'Chapter-1'}</p>
         <button type="button" onClick={handleUpdateProgress}>
           Update Progress
         </button>
