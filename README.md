@@ -58,7 +58,7 @@ Our website allows you to:
 
 <h2 id="installation"> 🛠️ Installation</h2>
 To run Bookstore locally, follow these steps:
-<br>
+<be>
 
 - [Repository Link](https://github.com/Kaiserabbas/Bookstore.git)
 
@@ -133,6 +133,7 @@ If you like this project feel free to clone it and use it in your own projects a
 - I would like to thank Microverse for the opportunity to learn among great aspiring developers
 
 [Back to Top ⬆️](#top)
+
 
 <h2 id="license">📄 MIT License</h2>
 
