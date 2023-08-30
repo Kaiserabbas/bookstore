@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const API_KEY = 'E1jMNc6zMuNLe4kRVA1s';
 
 // bookSlice.js
@@ -22,7 +21,7 @@ export const addBookAsync = createAsyncThunk(
   async (newBook) => {
     const response = await axios.post(`${API_URL}/${API_KEY}/books`, newBook);
     return response.data;
-  }
+  },
 );
 
 const booksSlice = createSlice({
@@ -32,8 +31,7 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       state.push({ ...action.payload, id: Date.now() });
     },
-    removeBook: (state, action) =>
-      state.filter((book) => book.id !== action.payload),
+    removeBook: (state, action) => state.filter((book) => book.id !== action.payload),
     editBook: (state, action) => {
       const index = state.findIndex((book) => book.id === action.payload.id);
       if (index !== -1) {
@@ -46,9 +44,7 @@ const booksSlice = createSlice({
     // Add more reducers as needed
     extraReducers: (builder) => {
       builder
-        .addCase(fetchBooks.fulfilled, (state, action) => {
-          return action.payload;
-        })
+        .addCase(fetchBooks.fulfilled, (state, action) => action.payload)
         .addCase(addBookAsync.fulfilled, (state, action) => {
           state.push(action.payload);
         });
@@ -56,5 +52,7 @@ const booksSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook, editBook, setBooks } = booksSlice.actions;
+export const {
+  addBook, removeBook, editBook, setBooks,
+} = booksSlice.actions;
 export default booksSlice.reducer;

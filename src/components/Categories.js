@@ -12,8 +12,8 @@ const RenderCategories = () => {
 
   return (
     <div className="category-list">
-      {categories.map((category, index) => (
-        <div key={index}>{category}</div>
+      {categories.map((category) => (
+        <div key="">{category}</div>
       ))}
     </div>
   );
