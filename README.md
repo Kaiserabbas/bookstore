@@ -58,9 +58,9 @@ Our website allows you to:
 
 <h2 id="installation"> 🛠️ Installation</h2>
 To run Bookstore locally, follow these steps:
-<br>
+<be>
 
-- [Repository Link] (https://github.com/Kaiserabbas/Bookstore.git)
+- [Repository Link](https://github.com/Kaiserabbas/Bookstore.git)
 
 - Clone this repository to your local machine.<br>
 - Install all the necessary dependencies using npm install.<br>
