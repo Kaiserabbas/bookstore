@@ -28,7 +28,7 @@ hr {
 
 .form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
   max-height: 50px;
 }
@@ -40,7 +40,7 @@ hr {
 }
 
 .title {
-  grid-column: span 3;
+  grid-column: span 4;
 }
 
 .author {

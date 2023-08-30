@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { removeBook } from '../redux/books/booksSlice';
 
-const API_URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const APP_ID = 'E1jMNc6zMuNLe4kRVA1s';
 
 const RemoveButton = ({ bookId }) => {

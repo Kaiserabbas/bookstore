@@ -4,7 +4,9 @@ import './css/BookCard.css';
 import ProgressCircle from './ProgressCircle';
 import RemoveButton from './RemoveButton';
 
-const BookCard = ({ book, index, onEdit, onComment }) => {
+const BookCard = ({
+  book, index, onEdit, onComment,
+}) => {
   const [comment, setComment] = useState('');
   const [progress, setProgress] = useState(book.progress || 0);
 
@@ -41,13 +43,16 @@ const BookCard = ({ book, index, onEdit, onComment }) => {
       <div className="book-card-progress">
         <ProgressCircle progress={10} />
         <div>
-          <p className="progress-percentage">{progress || '10'}%</p>
+          <p className="progress-percentage">
+            {progress || '10'}
+            %
+          </p>
           <p className="progress-text">Completed</p>
         </div>
       </div>
       <div className="book-card-right">
         <p className="current-chapter">Current Chapter</p>
-        <p className="book-state">{book.state || 'Not Started'}</p>
+        <p className="book-state">{book.state || 'Chapter-1'}</p>
         <button type="button" onClick={handleUpdateProgress}>
           Update Progress
         </button>

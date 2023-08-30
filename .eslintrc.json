@@ -17,14 +17,7 @@
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
-    "react/no-array-index-key": "off",
-    "operator-linebreak": "off",
-    "comma-dangle": "off",
-    "implicit-arrow-linebreak": "off",
-    "arrow-body-style": "off",
     "import/no-unresolved": "off",
-    "object-curly-newline": "off",
-    "react/jsx-one-expression-per-line": "off",
     "no-shadow": "off"
   },
   "overrides": [
