@@ -135,6 +135,9 @@ If you like this project feel free to clone it and use it in your own projects a
 [Back to Top ⬆️](#top)
 
 <h2 id="license">📄 License</h2>
+
+[License](https://github.com/Kaiserabbas/bookstore/blob/dev/LICENSE)
+
 The content of this repository is licensed under the MIT License. Feel free to use, modify, and distribute the code following the terms of the license.<br>
 Thank you for visiting the Bookstore GitHub repository. Enjoy exploring the world of flavors!
 
