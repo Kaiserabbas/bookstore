@@ -58,9 +58,9 @@ Our website allows you to:
 
 <h2 id="installation"> 🛠️ Installation</h2>
 To run Bookstore locally, follow these steps:
-<br>
+<be>
 
-- [Repository Link] (https://github.com/Kaiserabbas/Bookstore.git)
+- [Repository Link](https://github.com/Kaiserabbas/Bookstore.git)
 
 - Clone this repository to your local machine.<br>
 - Install all the necessary dependencies using npm install.<br>
@@ -134,7 +134,11 @@ If you like this project feel free to clone it and use it in your own projects a
 
 [Back to Top ⬆️](#top)
 
-<h2 id="license">📄 License</h2>
+
+<h2 id="license">📄 MIT License</h2>
+
+[MIT License](https://github.com/Kaiserabbas/bookstore/blob/dev/LICENSE)
+
 The content of this repository is licensed under the MIT License. Feel free to use, modify, and distribute the code following the terms of the license.<br>
 Thank you for visiting the Bookstore GitHub repository. Enjoy exploring the world of flavors!
 

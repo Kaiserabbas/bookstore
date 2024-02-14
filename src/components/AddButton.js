@@ -1,23 +1,35 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { addBook } from '../redux/books/booksSlice';
+
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const APP_ID = 'E1jMNc6zMuNLe4kRVA1s';
 
 const AddButton = ({ title, author }) => {
   const dispatch = useDispatch();
 
   const handleAddBook = () => {
+    const newItemId = Date.now().toString();
     const newBook = {
-      id: Date.now(),
+      item_id: newItemId,
       title,
       author,
       category: 'New Book Category',
-      progress: 0,
-      state: 'Chapter 1',
+      progress: 10,
+      state: 1,
     };
-    dispatch(addBook(newBook));
+    axios
+      .post(`${API_URL}/apps/${APP_ID}/books`, newBook)
+      .then((response) => {
+        console.log(response.data);
+        dispatch(addBook({ ...newBook, id: newItemId }));
+      })
+      .catch((error) => {
+        console.error('There was an error adding the book!', error);
+      });
   };
-
   return (
     <button type="button" onClick={handleAddBook}>
       Add Book

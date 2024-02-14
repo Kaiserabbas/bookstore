@@ -8,7 +8,7 @@ const BookCard = ({
   book, index, onEdit, onComment,
 }) => {
   const [comment, setComment] = useState('');
-  const [progress, setProgress] = useState(book.progress);
+  const [progress, setProgress] = useState(book.progress || 0);
 
   const handleEdit = () => {
     const updatedBook = { ...book, progress: 0 };
@@ -21,9 +21,10 @@ const BookCard = ({
   };
 
   const handleUpdateProgress = () => {
-    const progress = book.progress + 10;
-    setProgress(progress + 10);
+    const newProgress = progress + 10;
+    setProgress(newProgress);
   };
+
   return (
     <div className="book-card">
       <div className="book-card-left">
@@ -34,25 +35,24 @@ const BookCard = ({
           Comments
           <span className="vertical-line">|</span>
         </button>
-        <RemoveButton bookId={book.id} />
+        <RemoveButton bookId={Number(book.id)} />
         <button type="button" onClick={handleEdit}>
           Edit
         </button>
       </div>
       <div className="book-card-progress">
-        <ProgressCircle progress={progress} />
+        <ProgressCircle progress={10} />
         <div>
           <p className="progress-percentage">
-            {progress}
+            {progress || '10'}
             %
-            {' '}
           </p>
           <p className="progress-text">Completed</p>
         </div>
       </div>
       <div className="book-card-right">
         <p className="current-chapter">Current Chapter</p>
-        <p className="book-state">{book.state}</p>
+        <p className="book-state">{book.state || 'Chapter-1'}</p>
         <button type="button" onClick={handleUpdateProgress}>
           Update Progress
         </button>
@@ -63,16 +63,15 @@ const BookCard = ({
 
 BookCard.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    progress: PropTypes.number.isRequired,
-    state: PropTypes.string.isRequired,
+    progress: PropTypes.number,
+    state: PropTypes.number,
   }).isRequired,
   index: PropTypes.number.isRequired,
   onEdit: PropTypes.func.isRequired,
   onComment: PropTypes.func.isRequired,
 };
-
 export default BookCard;

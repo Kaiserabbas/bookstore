@@ -6,9 +6,10 @@
   grid-template-columns: 50% 25% 25%;
   background-color: #fff;
   border: 1px solid #ddd;
-  margin: 10px 50px;
-  padding: 15px;
-  box-shadow: 0 1px 2px 0 rgba(196, 196, 196, 0.2), 0 2px 5px 0 rgba(173, 173, 173, 0.19);
+  margin: 20px 50px;
+  padding: 25px 0 10px 25px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(117, 140, 243, 0.2), 0 2px 5px 0 rgba(33, 6, 189, 0.19);
 }
 
 .book-card-left h6 {
@@ -16,6 +17,7 @@
   color: #000;
   opacity: 0.5;
   font-family: 'Montserrat', sans-serif;
+  margin: 0 0 10px 0;
 }
 
 .book-card-left h3 {
