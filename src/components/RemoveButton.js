@@ -12,14 +12,8 @@ const RemoveButton = ({ bookId }) => {
 
   const handleRemoveBook = () => {
     axios
-      .delete(`${API_URL}/apps/${APP_ID}/books/${bookId}`)
-      .then((response) => {
-        console.log(response.data);
-        dispatch(removeBook(bookId));
-      })
-      .catch((error) => {
-        console.error('There was an error deleting the book!', error);
-      });
+      .delete(`${API_URL}/apps/${APP_ID}/books/${bookId}`);
+    dispatch(removeBook(bookId));
   };
 
   return (

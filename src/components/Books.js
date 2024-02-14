@@ -18,9 +18,6 @@ function Books() {
           ...response.data[key][0],
         }));
         dispatch(setBooks(booksArray));
-      })
-      .catch((error) => {
-        console.error('There was an error fetching the books!', error);
       });
   }, [dispatch]);
   return (

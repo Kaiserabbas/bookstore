@@ -21,14 +21,8 @@ const AddButton = ({ title, author }) => {
       state: 1,
     };
     axios
-      .post(`${API_URL}/apps/${APP_ID}/books`, newBook)
-      .then((response) => {
-        console.log(response.data);
-        dispatch(addBook({ ...newBook, id: newItemId }));
-      })
-      .catch((error) => {
-        console.error('There was an error adding the book!', error);
-      });
+      .post(`${API_URL}/apps/${APP_ID}/books`, newBook);
+    dispatch(addBook({ ...newBook, id: newItemId }));
   };
   return (
     <button type="button" onClick={handleAddBook}>
